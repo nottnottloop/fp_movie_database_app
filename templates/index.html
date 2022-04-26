@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Movie Database</title>
+    </head>
+    <body>
+        <style>
+            body {
+            background-color: black;
+            color: lime;
+            font-family: sans-serif;
+        }
+        </style>
+        {% for movie in movies: %}
+        <h1>{{ movie['title'] }}</h1>
+        <h2>{{ movie['year'] }} - <a href="./movie/{{movie['imdbID']}}">More info</a></h2>
+        {% endfor %}
+    </body>
+</html>
