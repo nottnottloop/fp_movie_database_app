@@ -6,13 +6,22 @@
         <style>
             body {
             background-color: black;
-            color: lime;
+            color: white;
             font-family: sans-serif;
-        }
+            }
+
+            a {
+                color: lime;
+            }
+
         </style>
+        <h1>Movie time 🎥</h1>
         {% for movie in movies: %}
-        <h1>{{ movie['title'] }}</h1>
-        <h2>{{ movie['year'] }} - <a href="./movie/{{movie['imdbID']}}">More info</a></h2>
+        <h2>{{movie['Title']}}</h1>
+        <img width="400px" src="{{movie['Poster']}}">
+        <h3>{{movie['Released']}} - {{movie['Genre']}}</h3>
+        <p>{{movie['Plot']}}</p>    
+        <a href="https://www.imdb.com/title/{{movie['imdbID']}}/">More info</a></h2>
         {% endfor %}
     </body>
 </html>
