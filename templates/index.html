@@ -12,16 +12,36 @@
 
             a {
                 color: lime;
+                font-size: 50px;
             }
 
+            h1 {
+                font-size: 50px;
+            }
+
+            #movieList {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                width: 1920px;
+                margin: 0 auto;
+            }
+
+            .movie {
+                margin: 60px;
+                /*margin-top: 20px;*/
+            }
         </style>
         <h1>Movie time 🎥</h1>
+        <div id="movieList">
         {% for movie in movies: %}
-        <h2>{{movie['Title']}}</h1>
+        <div class="movie">
+        <u><h1>{{movie['Title']}}</h1></u>
         <img width="400px" src="{{movie['Poster']}}">
         <h3>{{movie['Released']}} - {{movie['Genre']}}</h3>
         <p>{{movie['Plot']}}</p>    
         <a href="https://www.imdb.com/title/{{movie['imdbID']}}/">More info</a></h2>
+        </div>
         {% endfor %}
+        </div>
     </body>
 </html>
